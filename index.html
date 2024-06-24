@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Report Card</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+    }
+    .container {
+        width: 210mm;
+        min-height: 297mm;
+        padding: 20mm;
+        margin: 20px auto;
+        box-sizing: border-box;
+        background-color: white;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        position: relative;
+        background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    }
+    .header, .footer {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .header h1 {
+        margin: 0;
+        font-size: 32px;
+        color: #007BFF;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 2px solid #007BFF;
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+    .header p {
+        margin: 5px 0 0 0;
+        font-size: 14px;
+        color: #555;
+    }
+    .details, .marks, .extra-curricular, .grades {
+        margin-bottom: 20px;
+    }
+    .details table, .marks table, .extra-curricular table, .grades table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 10px;
+    }
+    .details th, .details td, .marks th, .marks td, .extra-curricular th, .extra-curricular td, .grades th, .grades td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        font-size: 14px;
+    }
+    .details th {
+        background-color: #f9f9f9;
+        font-weight: 500;
+    }
+    .marks th, .extra-curricular th, .grades th {
+        background-color: #007BFF;
+        color: white;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .marks tr:nth-child(even), .extra-curricular tr:nth-child(even), .grades tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    h2 {
+        font-size: 22px;
+        margin: 10px 0;
+        border-bottom: 2px solid #007BFF;
+        padding-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #007BFF;
+    }
+    .footer p {
+        font-size: 12px;
+        color: #777;
+        margin: 0;
+    }
+    #downloadBtn {
+        display: block;
+        width: 200px;
+        margin: 30px auto;
+        padding: 15px;
+        text-align: center;
+        background-color: #007BFF;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    #downloadBtn:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+    .details table, .marks table, .extra-curricular table, .grades table {
+        border: 1px solid #ddd;
+    }
+    .details td, .marks td, .extra-curricular td, .grades td {
+        background-color: #fafafa;
+    }
+    .details td, .marks td, .extra-curricular td, .grades td {
+        border: 1px solid #ddd;
+    }
+    .grades {
+        margin-top: 20px;
+    }
+    .grades table {
+        margin-top: 10px;
+    }
+    .grades th, .grades td {
+        padding: 10px;
+        text-align: center;
+    }
+    .container::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+    .details, .marks, .extra-curricular, .grades {
+        page-break-inside: avoid;
+    }
+    @media print {
+        body, .container {
+            background: none;
+            box-shadow: none;
+        }
+        #downloadBtn {
+            display: none;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container" id="reportCard">
+    <div class="header">
+        <h1>Rohan Gautam College</h1>
+        <p>Rohan Gautam College Street, Gautambuddhnagar, U.P.</p>
+    </div>
+
+    <div class="details">
+        <h2>Student Details</h2>
+        <table>
+            <tr>
+                <th>Student Name:</th>
+                <td>John Cena</td>
+            </tr>
+            <tr>
+                <th>Course:</th>
+                <td>Bachelor of Science</td>
+            </tr>
+            <tr>
+                <th>Year:</th>
+                <td>2024</td>
+            </tr>
+            <tr>
+                <th>Address:</th>
+                <td>You can't see me</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="marks">
+        <h2>Marks</h2>
+        <table>
+            <tr>
+                <th>Subject</th>
+                <th>Marks</th>
+            </tr>
+            <tr>
+                <td>Calculus</td>
+                <td>85</td>
+            </tr>
+            <tr>
+                <td>IoT</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>English</td>
+                <td>78</td>
+            </tr>
+            <tr>
+                <td>Python</td>
+                <td>88</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td><strong>341</strong></td>
+            </tr>
+            <tr>
+                <td>Percentage</td>
+                <td><strong>85.25%</strong></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="extra-curricular">
+        <h2>Extra Curricular Activities</h2>
+        <table>
+            <tr>
+                <th>Activity</th>
+                <th>Participation</th>
+            </tr>
+            <tr>
+                <td>Sports</td>
+                <td>Basketball Team Captain</td>
+            </tr>
+            <tr>
+                <td>Music</td>
+                <td>Choir Member</td>
+            </tr>
+            <tr>
+                <td>Debate</td>
+                <td>Inter-college Debate Winner</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="grades">
+        <h2>Grades</h2>
+        <table>
+            <tr>
+                <th>Grade</th>
+                <th>GPA</th>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>4.0</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>3.0</td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td>2.0</td>
+            </tr>
+            <tr>
+                <td>D</td>
+                <td>1.0</td>
+            </tr>
+            <tr>
+                <td>F</td>
+                <td>0.0</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="footer">
+        <p>© Rohan Gautam College. All rights reserved.</p>
+    </div>
+</div>
+
+<a id="downloadBtn" href="#">Download PDF</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+<script>
+    document.getElementById('downloadBtn').addEventListener('click', function () {
+        var element = document.getElementById('reportCard');
+        html2pdf(element, {
+            margin:       1,
+            filename:     'report_card.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2 },
+            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        });
+    });
+</script>
+
+</body>
+</html>
